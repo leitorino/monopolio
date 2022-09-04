@@ -5,12 +5,14 @@ class usuario{
     dinero: number;
     posicion: number;
     propiedades: Array<any>;
+    turno: boolean;
 
     constructor(){
         this.estado = "activo";
         this.dinero = 1500;
         this.posicion = 0;
         this.propiedades = [];
+        this.turno = false;
     }
     
     setEstado(newEstado: estados){

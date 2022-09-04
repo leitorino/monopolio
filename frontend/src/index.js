@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Connect to WebSocket server
-const websocket = new WebSocket("ws://localhost:3000");
+const websocket = new WebSocket("ws://localhost:5000");
 
 // Asignación de callbacks
 websocket.onopen = function (evt) {

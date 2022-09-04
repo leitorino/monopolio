@@ -4,8 +4,8 @@ const prop = require("../logica/propiedades");
 const funcionalidades = require("../logica/funcionalidades");
 
 router.get("/", function (req: any, res: any) {
-    const usuario = new funcionalidades;
-    res.json(usuario.tirarDado());
+    const usuario = new prop;
+    res.json(usuario.getPrecioHotel());
 });
 
 module.exports = router;
