@@ -1,9 +1,9 @@
 const estados = ["bancarrota", "activo"];
 type estados = "bancarrota" | "activo";
 class usuario{
-    estado: String;
-    dinero: Number;
-    posicion: Number;
+    estado: string;
+    dinero: number;
+    posicion: number;
     propiedades: Array<any>;
 
     constructor(){
@@ -33,7 +33,7 @@ class usuario{
         return this.posicion;
     }
 
-    setPosicion(newPosicion: Number){
+    setPosicion(newPosicion: number){
         this.posicion = newPosicion;
     }
 

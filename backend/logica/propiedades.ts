@@ -2,12 +2,14 @@ const TiposDePropiedades = ["Marron", "AzulClaro", "Fucsia", "Naranja", "Rojo", 
 type TiposDePropiedades = "Marron" | "AzulClaro" | "Fucsia" | "Naranja" | "Rojo" | "Amarillo" | "Verde" | "Azul";
 
 class propiedades{
-    tipoDePropiedad: String;
-    precio: Number;
-    casa: Number;
-    hotel: Boolean;
-    hipoteca: Number;
-    alquiler: Number;
+    tipoDePropiedad: string;
+    precio: number;
+    casa: number;
+    hotel: boolean;
+    hipoteca: number;
+    alquiler: number;
+    precioCasa: number;
+    precioHotel: number;
     
     constructor(){
         this.tipoDePropiedad = "";
@@ -16,6 +18,8 @@ class propiedades{
         this.hotel = false;
         this.hipoteca = 0;
         this.alquiler = 0;
+        this.precioCasa = 0;
+        this.precioHotel = 0;
     }
 
     setTipoDePropiedad(newTipoDePropiedad : TiposDePropiedades){
@@ -34,11 +38,19 @@ class propiedades{
         return this.precio;
     };
 
-    setCasa(newCasa : number){
-        this.casa = newCasa;
+    addCasa(){
+        if(this.casa < 4){
+            this.casa++;
+        }
     };
 
-    getCasa(){
+    sellCasa(cant: number){
+        if(cant > 0 && cant <= this.casa){
+            this.casa = this.casa - cant;
+        }
+    }
+
+    getCasas(){
         return this.casa;
     };
 
@@ -48,13 +60,27 @@ class propiedades{
           this.hotel = true;
         }else if(this.casa < 4){
           this.hotel = false;
-  
         }
-          
       };
 
     getHotel(){
         return this.hotel;
+    };
+
+    setPrecioCasa(newPrecioCasa : number){
+        this.precioCasa = newPrecioCasa;
+    };
+
+    getPrecioCasa(){
+        return this.precioCasa;
+    };
+
+    setPrecioHotel(newPrecioHotel : number){
+        this.precioHotel = newPrecioHotel;
+    };
+
+    getPrecioHotel(){
+        return this.precioHotel;
     };
 
     setHipoteca(newHipoteca : number){
@@ -72,10 +98,6 @@ class propiedades{
     getAlquiler(){
         return this.alquiler;
     };
-
-
-
-
     
     
 }
